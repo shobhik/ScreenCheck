@@ -1,4 +1,4 @@
-package com.shobhik.funstuff.screencheck;
+package com.shobhik.funstuff.screencheck.utils;
 
 /** Contains various messaging codes
  * Created by Shobhik Ghosh on 7/31/2016.

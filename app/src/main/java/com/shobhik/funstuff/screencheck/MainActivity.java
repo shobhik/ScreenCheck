@@ -3,18 +3,19 @@ package com.shobhik.funstuff.screencheck;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
-import android.graphics.Color;
-import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Spannable;
 import android.text.SpannableStringBuilder;
-import android.text.style.ForegroundColorSpan;
-import android.text.style.StyleSpan;
 import android.util.DisplayMetrics;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.shobhik.funstuff.screencheck.utils.Codes;
+import com.shobhik.funstuff.screencheck.utils.StringFormatting;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -62,19 +63,19 @@ public class MainActivity extends AppCompatActivity {
         float pxWidth = displayMetrics.widthPixels;
 
         //Statistics are a pair of black text and blue number
-        SpannableStringBuilder baseA = createStatistic("Usable screen size is ", screenWidthDp+"dp");
-        SpannableStringBuilder baseB = createStatistic(" x ", screenHeightDp+"dp");
-        SpannableStringBuilder usableA = createStatistic("Resolution is ", pxWidth+"px");
-        SpannableStringBuilder usableB = createStatistic(" x ", pxHeight+"px");
-        SpannableStringBuilder b = createStatistic("Smallest screen width is", ""+smallestScreenWidthDp);
-        SpannableStringBuilder effective = addSpans(baseA, baseB, false);
-        SpannableStringBuilder usable = addSpans(usableA, usableB, false);
-        SpannableStringBuilder finalText = addSpans(effective, usable, true);
+        SpannableStringBuilder baseA = StringFormatting.createStatistic("Usable screen size is ", screenWidthDp+"dp");
+        SpannableStringBuilder baseB = StringFormatting.createStatistic(" x ", screenHeightDp+"dp");
+        SpannableStringBuilder usableA = StringFormatting.createStatistic("Resolution is ", pxWidth+"px");
+        SpannableStringBuilder usableB = StringFormatting.createStatistic(" x ", pxHeight+"px");
+        SpannableStringBuilder b = StringFormatting.createStatistic("Smallest screen width is", ""+smallestScreenWidthDp);
+        SpannableStringBuilder effective = StringFormatting.addSpans(baseA, baseB, false);
+        SpannableStringBuilder usable = StringFormatting.addSpans(usableA, usableB, false);
+        SpannableStringBuilder finalText = StringFormatting.addSpans(effective, usable, true);
         dimensionsView.setText(finalText);
 
 //        String previousFindings = sizeBucketView.getText().toString();
         String newFindings = "Size Bucket Check at Runtime: " + sizeValue;
-        SpannableStringBuilder sizeBucketFindings = createStatistic("Size Bucket Check at Runtime: ", sizeValue + "!");
+        SpannableStringBuilder sizeBucketFindings = StringFormatting.createStatistic("Size Bucket Check at Runtime: ", sizeValue + "!");
         sizeBucketView.setText(sizeBucketFindings);
 
 
@@ -107,30 +108,20 @@ public class MainActivity extends AppCompatActivity {
 
     };
 
-    public SpannableStringBuilder addSpans(SpannableStringBuilder a, SpannableStringBuilder b, boolean newline) {
-        SpannableStringBuilder fin = new SpannableStringBuilder("");
-        fin.append(a);
-        if(newline) {
-            fin.append("\n");
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+        super.onCreateOptionsMenu(menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.menu_dashboard) {
+            Intent intent = new Intent(mContext, DashboardTestActivity.class);
+            startActivity(intent);
         }
-        fin.append(b);
-        return fin;
-    }
-    public SpannableStringBuilder createStatistic(String text, String number) {
-        SpannableStringBuilder beginning = new SpannableStringBuilder(text);
-        SpannableStringBuilder end = new SpannableStringBuilder(number);
-        end = makeBlueAndBold(end);
-        SpannableStringBuilder fin = new SpannableStringBuilder("");
-        fin.append(beginning);
-        fin.append(end);
-        return fin;
-    }
-    public SpannableStringBuilder makeBlueAndBold(SpannableStringBuilder subject) {
-        int bluecolor = Color.parseColor("#035995");
-        SpannableStringBuilder result = subject;
-        result.setSpan(new StyleSpan(Typeface.BOLD), 0, result.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        result.setSpan(new ForegroundColorSpan(bluecolor), 0, result.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-        return result;
+        return true;
     }
 
 }

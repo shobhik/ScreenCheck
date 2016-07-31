@@ -15,7 +15,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DimensionCheckerActivity"></activity>
+        <activity android:name=".DimensionCheckerActivity" />
+        <activity android:name=".DashboardTestActivity">
+        </activity>
     </application>
 
 </manifest>

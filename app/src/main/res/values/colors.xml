@@ -5,4 +5,5 @@
     <color name="colorAccent">#FF4081</color>
     <color name="sbn_blue">#035995</color>
     <color name="sbn_white">#ffffff</color>
+    <color name="sbn_gray">#cccccc</color>
 </resources>
