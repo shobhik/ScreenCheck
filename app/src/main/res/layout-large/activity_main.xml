@@ -11,116 +11,129 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.shobhik.funstuff.screencheck.MainActivity">
 
-    <TextView
+    <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="DENSITY AND RESOLUTION"
-        android:id="@+id/textView30"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:textColor="@android:color/darker_gray"
-        android:layout_marginBottom="10dp" />
+        android:id="@+id/scrollView6" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Medium Text"
-        android:id="@+id/dimcheck"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="CHECK INSTALLED AND RUNTIME SIZE BUCKETS"
-        android:id="@+id/textView25"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
-        android:textColor="@android:color/darker_gray"
-        android:layout_marginBottom="10dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="DENSITY AND RESOLUTION"
+                android:id="@+id/textView30"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:textColor="@android:color/darker_gray"
+                android:layout_marginBottom="10dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Screen Size Bucket via RES is Large!"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:id="@+id/textView"
-        android:layout_centerHorizontal="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Medium Text"
+                android:id="@+id/dimcheck"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Reported Size Bucket"
-        android:id="@+id/reported_bucket"
-        android:layout_margin="10dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="CHECK INSTALLED AND RUNTIME SIZE BUCKETS"
+                android:id="@+id/textView25"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="50dp"
+                android:textColor="@android:color/darker_gray"
+                android:layout_marginBottom="10dp" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Screen Size Bucket via RES is Large!"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/textView"
+                android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="SCREEN DENSITY BUCKET"
-        android:id="@+id/textView2"
-        android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:textColor="@android:color/darker_gray" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Reported Size Bucket"
+                android:id="@+id/reported_bucket"
+                android:layout_margin="10dp" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:src="@drawable/testicon"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/textView2" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="SCREEN DENSITY BUCKET"
+                android:id="@+id/textView2"
+                android:layout_below="@+id/textView"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:textColor="@android:color/darker_gray" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="RULERS"
-        android:id="@+id/textView16"
-        android:textColor="@android:color/darker_gray"
-        android:layout_marginTop="25dp" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView"
+                android:src="@drawable/testicon"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/textView2" />
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/imageView"
-        android:gravity="center_horizontal"
-        android:layout_centerHorizontal="true">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="RULERS"
+                android:id="@+id/textView16"
+                android:textColor="@android:color/darker_gray"
+                android:layout_marginTop="25dp" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Check Height"
-            android:id="@+id/height_button"
-            android:layout_marginTop="45dp"
-            android:layout_below="@+id/imageView"
-            android:layout_margin="10dp"
-            android:layout_alignParentLeft="true"
-            android:background="@color/sbn_blue"
-            android:textColor="@color/sbn_white"
-            android:padding="10dp" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/imageView"
+                android:gravity="center_horizontal"
+                android:layout_centerHorizontal="true">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Check Width"
-            android:id="@+id/width_button"
-            android:layout_alignTop="@+id/height_button"
-            android:layout_toRightOf="@+id/height_button"
-            android:layout_toEndOf="@+id/height_button"
-            android:layout_margin="10dp"
-            android:textColor="@color/sbn_white"
-            android:background="@color/sbn_blue"
-            android:padding="10dp" />
-    </LinearLayout>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Check Height"
+                    android:id="@+id/height_button"
+                    android:layout_marginTop="45dp"
+                    android:layout_below="@+id/imageView"
+                    android:layout_margin="10dp"
+                    android:layout_alignParentLeft="true"
+                    android:background="@color/sbn_blue"
+                    android:textColor="@color/sbn_white"
+                    android:padding="10dp" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Check Width"
+                    android:id="@+id/width_button"
+                    android:layout_alignTop="@+id/height_button"
+                    android:layout_toRightOf="@+id/height_button"
+                    android:layout_toEndOf="@+id/height_button"
+                    android:layout_margin="10dp"
+                    android:textColor="@color/sbn_white"
+                    android:background="@color/sbn_blue"
+                    android:padding="10dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
 
 </LinearLayout>
